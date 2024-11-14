@@ -1,0 +1,58 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% размер полей
+\usepackage{geometry}
+\geometry{a4paper, top=2cm, bottom=2cm, right=1.5cm, left=3cm}
+
+ %debugging
+%\usepackage{showframe}
+
+% полуторный интервал
+\usepackage{setspace}
+\onehalfspacing
+
+% абзацный отступ
+\setlength{\parindent}{1.25cm}
+
+% выравнивание текста по ширине
+\sloppy
+
+% списки
+\usepackage{calc} % арифметические операции с величинами
+\usepackage{enumitem}
+\setlist{
+    nosep,
+    leftmargin=0pt,
+    itemindent=\parindent + \labelwidth - \labelsep,
+}
+
+% подписи к рисункам и таблицам
+\usepackage{caption}
+\renewcommand{\figurename}{Рисунок}
+\renewcommand{\tablename}{Таблица}
+\DeclareCaptionFormat{custom}
+{
+    \textit{#1#2#3}
+}
+\DeclareCaptionLabelSeparator{custom}{. }
+\captionsetup{
+    % хз какой это размер - 12 или нет, но выглядит меньше 14
+    font=small,
+    format=custom,
+    labelsep=custom,
+}
+
+% картинки
+\usepackage{graphicx}
+
+% колонтитулы
+\usepackage{fancyhdr}
+
+% картинки и таблицы находятся именно в том месте текста где помещены (атрибут H)
+\usepackage{float}
+
+% таблицы
+\usepackage{tabularray}

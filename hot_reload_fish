@@ -1,0 +1,6 @@
+#!/usr/bin/env fish
+while true
+    inotifywait -e modify $argv[1] $argv[2]
+    set dir (path dirname $argv[1])
+    xelatex -interaction=nonstopmode -output-directory=$dir $argv[1]
+end
